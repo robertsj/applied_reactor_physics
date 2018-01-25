@@ -1,0 +1,38 @@
+moder  / Convert data on 20 to binary to 21, id is 9237
+20 -21
+reconr / Reconstruct cross sections onto 22
+-21 -22
+'PENDF TAPE FOR U-238'/
+9237 0/
+0.001  0.  0.005/ Reconstruction 0.1% (0.5% max) with 0K temp
+0 /
+plotr
+38/
+1 1 0.30 0
+1/                    new axes, new curve
+'U-238'/              title line 1
+/                     no line 2 for titles
+4 0 0 1 1e-3 1e4/     log-log
+1e-4 1e7/             x-axis range
+'energy (eV)'/        x-axis label
+1e-4 1e5/             y-axis range
+'cross section (b)'/  y-axis label
+6 -22 9237 3 1/       
+0 0 0 0/              solid line, black
+'total'/
+2/
+6 -22 9237 3 102/     
+0 0 0 1/              solid line, red
+'capture'/
+3/
+6 -22 9237 3 2/       
+0 0 0 2/              solid line, green
+'elastic'/
+4/
+6 -22 9237 3 18/       
+0 0 0 3/              solid line, blue
+'fission'/
+99/                   finished
+viewr
+38 39/
+stop
