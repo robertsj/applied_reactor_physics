@@ -41,7 +41,7 @@ same directory as the other files.
 
 Use your text editor to open the U-235 ENDF file you downloaded.  Search for
 the beginning of the elastic cross section tabulation by looking for 
-MAT=1301, MF=3, and MT=2.  Answer the following:
+MAT=9228, MF=3, and MT=2.  Answer the following:
   - What is the elastic cross section at 0.0253 eV?
   - What is the mathematical shape of this cross section at low energies?
   - Where does the cross section begin to deviate from its low-energy shape?
@@ -56,12 +56,20 @@ and answer the following:
   - What interpolation law is specified for capture? 
   - What is the capture cross section at .0015 eV?
 
+Now, search for the beginning of the total fission cross section (MT=18)
+and answer the following:
+  - What is the fission cross section at 0.0253 eV?
+  - What is the mathematical shape of this cross section at low energies?
+  - Where does the cross section begin to deviate from its low-energy shape?
+  - What interpolation law is specified for capture? 
+  - What is the fission cross section at .0015 eV?
+
 Finally, search for the beginning of the total cross section (MT=1):
-  - Does the total cross section at 0.0253 eV match the sum of the elastic 
-    and capture cross sections?
+  - Does the total cross section at 0.0253 eV match the sum of the elastic,
+    capture, and fission cross sections?
   - Compute the total cross section at .0015 eV using linear interpolation. 
-    What is the percent error with respect to the sum of the elastic and 
-    capture cross sections at that energy?
+    What is the percent error with respect to the sum of the elastic, capture,
+    and fission cross sections at that energy?
   - Does the more complicated interpolation law given for MT=1 really solve 
     the problem?
 
@@ -80,35 +88,44 @@ tape 20 (i.e., `cp h1 tape20`). Produce the following input file *but leave off
 the comments to the right of the slash symbol*.
 
 ```
-           reconr
-           20 21
-           'exercise 2'/    new tape ID title
-           1301 1/          MAT
-           .001/            tolerance
-           '1-H-1'/         descriptive card for new tape
-           0/
-           plotr
-           22/              output file
-           /                default page style
-           1/               new axes, new curve
-           '1-H-1'/         title line 1
-           /                no line 2 for titles
-           4/               log-log
-           1e-4 1/          x-axis range
-           /                default label
-           .01 10/          y-axis range
-           /                default label
-           5 21 1301 3 102/ data source for curve
-           /                default curve style
-           99/              finished
-           viewr
-           22 23/
-           stop
+reconr
+20 21
+'exercise 2'/       new tape ID title
+125 1/              material 125 (H-1)
+.001/               tolerance
+'1-H-1'/            descriptive card for new tape
+0/
+plotr
+22/
+/
+1/                  first plot on new axis
+'1-H-1'/            title line 1
+/                   title line 2 (here, it's empty!)
+4 0 0 1/            log-log, no second axis, no grid lines/ticks, use legend
+1e-4 1e6/           energy range
+/                   xlabel
+1e-4 1e2/           cross-section range
+/                   ylabel
+7 21 125 3 1/       endf type, data tape, material (3 is sigma vs E), file, and reaction
+0 0 0 0/            line with no symbols, square (not used), solid, black
+'total'/
+2/                  second plot on same axis, so skip a bunch of other cards.
+7 21 125 3 2/       endf type, data tape, material (3 is sigma vs E), file, and reaction
+0 0 0 1/            line with no symbols, square (not used), solid, black
+'elastic'/
+3/                  third plot on same axis, so skip a bunch of other cards.
+7 21 125 3 102/     endf type, data tape, material (3 is sigma vs E), file, and reaction
+0 0 0 2/            line with no symbols, square (not used), solid, black
+'capture'/
+99/                 finished (99 indicates no more curves will be read)
+viewr
+22 23/
+stop
 ```
 
-This file says to run RECONR on MAT1301 with a reconstruction tolerance
+This file says to run RECONR on MAT125 with a reconstruction tolerance
 of .001 (.1%). Take the output on tape21 into PLOTR and extract the data
-for MAT1301, MF3, MT102 onto tape22. A title is provided for the graph,
+for MAT125, MF3, MT102 onto tape22. A title is provided for the graph,
 and special scales are specified for the axes. The default axis labels and
 line type will be used. Finally, a Postscript version of the graph is produced
 on tape23 using VIEWR. 
