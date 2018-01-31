@@ -17,7 +17,7 @@ This will load an in-console text editor.  Type the following on the
 first line:
 
 ```
-export PATH=$PATH:/export/apps/njoy/NJOY2016/bin
+export PATH=$PATH:/share/apps/njoy/NJOY2016/bin
 ```
 
 Then type `Ctl+0` and hit enter when it prompts you for the file name.
