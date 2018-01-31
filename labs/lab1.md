@@ -39,9 +39,9 @@ same directory as the other files.
 
 (Adapted from http://t2.lanl.gov/nis/njoy/exer01.html)
 
-Use your text editor to open the U-235 ENDF file you downloaded.  Search for
+Use your text editor to open the H-1 ENDF file you downloaded.  Search for
 the beginning of the elastic cross section tabulation by looking for 
-MAT=9228, MF=3, and MT=2.  Answer the following:
+MAT=125, MF=3, and MT=2.  Answer the following:
   - What is the elastic cross section at 0.0253 eV?
   - What is the mathematical shape of this cross section at low energies?
   - Where does the cross section begin to deviate from its low-energy shape?
@@ -56,20 +56,12 @@ and answer the following:
   - What interpolation law is specified for capture? 
   - What is the capture cross section at .0015 eV?
 
-Now, search for the beginning of the total fission cross section (MT=18)
-and answer the following:
-  - What is the fission cross section at 0.0253 eV?
-  - What is the mathematical shape of this cross section at low energies?
-  - Where does the cross section begin to deviate from its low-energy shape?
-  - What interpolation law is specified for capture? 
-  - What is the fission cross section at .0015 eV?
-
 Finally, search for the beginning of the total cross section (MT=1):
   - Does the total cross section at 0.0253 eV match the sum of the elastic,
-    capture, and fission cross sections?
+    and capture cross sections?
   - Compute the total cross section at .0015 eV using linear interpolation. 
-    What is the percent error with respect to the sum of the elastic, capture,
-    and fission cross sections at that energy?
+    What is the percent error with respect to the sum of the elastic and 
+    capture cross sections at that energy?
   - Does the more complicated interpolation law given for MT=1 really solve 
     the problem?
 
