@@ -65,6 +65,8 @@ Finally, search for the beginning of the total cross section (MT=1):
   - Does the more complicated interpolation law given for MT=1 really solve 
     the problem?
 
+*Hint*: Look for lines like 
+
 ### Plotting Cross Sections
 
 (Adapted from http://t2.lanl.gov/nis/njoy/exer02.html)
@@ -136,42 +138,44 @@ Copy u238 to tape 20. Create an input file containing the following lines,
 again leaving off the comments after the slashes: 
 
 ```
-           reconr
-           20 21
-           'exercise 4'/    new tape ID title
-           9237 1/          MAT
-           .01/             fractional tolerance
-           '92-U-238'/      descriptive card for new tape
-           0/
-           broadr
-           20 21 22
-           9237 1/          MAT, one temperature
-           .01/             tolerance
-           900/             temperature is 900 K
-           0/
-           plotr
-           23/              output file
-           /                default page style
-           1/               new axes, new curve
-           '92-U-238'/      title line 1
-           /                no line 2 for titles
-           2/               lin x - log y
-           2 4 .5/          x-axis range and step
-           /                default label
-           .1 1000/         y-axis range
-           /                default label
-           4 21 9237 3 102 0./ data source for curve
-           1 3 0/           crosses with solid line
-           2/               second curve on axes
-           4 22 9237 3 102 10000./ data source for curve
-           0 0 1/           crosses with dashed curve
-           99/              finished
-           viewr
-           23 24/
-           stop
+moder
+20 -21/                  convert to binary on tape20 (tapes *must* be >= 20)
+reconr
+-21 -22/                 reconstruct on tape22 
+'pendf tape for u-238'/
+9237 1/
+.01/                     fractional tolerance
+'92-U-238'/              descriptive card for new tape
+0/
+broadr
+-21 -22 -23
+9237 1/                  MAT, one temperature
+.01/                     tolerance
+900/                     temperature is 900 K
+0/
+plotr
+24/                      output file
+/                        default page style
+1/                       new axes, new curve
+'92-U-238'/              title line 1
+/                        no line 2 for titles
+2/                       lin x - log y
+3 23 2/                  x-axis range and step
+/                        default label
+.1 3e4/                  y-axis range
+/                        default label
+6 -22 9237 3 102 0./     data source for curve
+1 3 0 0/                 crosses with solid black line
+2/                       second curve on axes
+6 -23 9237 3 102 900./   data source for curve
+0 0 1 1/                 crosses with dashed red curve
+99/                      finished
+viewr
+24 25/
+stop
 ```
 
-Run this input to produce the image on tape24.  Include this image in your
+Run this input to produce the image on tape25.  Include this image in your
 report and answer the following:
   - How did the shape of the resonances change between 0K and 900K?
   - What impact does this resonance shape change have on reactors?
