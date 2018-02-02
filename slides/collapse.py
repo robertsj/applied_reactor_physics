@@ -56,6 +56,10 @@ plt.legend()
 plt.xlabel('$E$ (eV)')
 plt.ylabel('$phi(E)$')
 
+"""
+Quick Question: Which flux leads to a larger dip and why?
+"""
+
 plt.figure(2)
 plt.title('Impact of Dilution')
 plt.loglog(E, phi_nr[inf_dilute], label='NR ($\sigma_d=\infty$ b)', color='k', ls='-')
@@ -68,7 +72,7 @@ plt.ylabel('$phi(E)$')
 
 
 plt.figure(3)
-plt.title('Group vs Continuous Cross Sections')
+plt.title('Group and Continuous Cross Sections')
 plt.loglog(E, sigma_ar)
 for sd in sigma_d:
     color = np.random.rand(3)
@@ -79,14 +83,22 @@ for sd in sigma_d:
         sigma_plt.append(sigma_g[sd][g])
         sigma_plt.append(sigma_g[sd][g])        
     plt.plot(E_plt, sigma_plt, c=color, 
-             label='$\sigma_d={}$'.format(sd if sd < 10000 else "\infty"))
+             label='$\sigma_d={}$'.format(float(sd) if sd < inf_dilute else "\infty"))
 plt.axis([group_boundaries[-1], group_boundaries[0], 1e-1, 1e5])
 plt.legend()
 plt.xlabel('energy (eV)')
 plt.ylabel('cross section (b)')
+
+"""
+Quick Question: Why does the middle cross section have no apparent dependence
+on the dilution cross section?
+"""
 
 plt.figure(4)
 plt.title('Self-Shielding Factor (4-9.9 eV group)')
 plt.semilogx(sigma_d[1:], self_shielding[1:], '-o')
 
 plt.show()
+
+
+
