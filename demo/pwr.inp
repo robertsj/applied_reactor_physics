@@ -1,0 +1,30 @@
+TTL * 17 x 17
+PSC 1
+DBL
+* CONDITIONS
+PDE 104.5 'KWL'                               * specific power of pin
+PRE 155                                       * pressure (bar)
+TMO=565                                       * mod temp K
+TCO=580                                       * cool temp K
+TFU=900                                       * fuel temp K
+BOR=900                                       * boron (ppm)
+* GEOMETRY
+PWR 17 1.26 21.5                              * 17x17, 1.26cm pitch, 21.5cm a. pitch
+FUE 1, 10.34/4.0                              * UO2 at 4%
+PIN 1 0.4096 0.4180 0.4750 /'1' 'AIR', 'CAN'  * fuel/air/clad
+* LATTICE
+LPI                                           * 1/8th symmetry
+1
+1 1
+1 1 1
+1 1 1 1
+1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1
+* 
+* DEP -80                                         * deplete to 80 MWd/kg, auto step size
+STA
+
+
