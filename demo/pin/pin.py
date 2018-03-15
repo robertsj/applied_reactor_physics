@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 tmpl = """TTL *Pin cell example
-TFU=293 TMO=293 BOR={0}   *Statepoint parameters
+TFU={} TMO={} BOR={}   *Statepoint parameters
 FUE 1 10.1/3.2            *Fuel density/enrichment
 PIC .49 .55 .81           *Pin cell radii
 PDE 30
@@ -15,7 +15,7 @@ TFU=293.0
 TMO=293.0
 BOR=0.0
 
-TFUs = np.arange(250., 1201., 50)
+TFUs = np.arange(300., 1201., 50)
 KINFs = np.zeros_like(TFUs)
 for i in range(len(TFUs)):
     TFU = TFUs[i]
