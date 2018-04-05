@@ -1,0 +1,113 @@
+ Reserving general partition A  with:   14.0 Mwords (default)
+ Reserving neutron partition B1 with:    4.0 Mwords (default)
+ Reserving gamma   partition B2 with:    4.0 Mwords (default)
+ Total allocation                   :   18.0 Mwords (A+B1)
+ CASMO library identified as E6 0200 UPDATE D
+ __________________________________________________________________________________________
+ * C A S M O - 4E 1.00.02 REV:00 CREATED:2012/05/08 STUDSVIK * EXECUTED 2018/03/29 12:29:26
+
+ This source code includes the following optional modules:
+      1 - CASMO-4E (CASMO-4 Extended Version).
+      2 - MxN extended multi-assembly module present.
+      3 - Hexagonal module present.
+      4 - CLU/AGR module present.
+      5 - PSC Tiff/PostScript capability active.
+      6 - Azimuthal depletion model present.
+      7 - FSS/FSC model present.
+      8 - Extra cards present.
+      9 - Pn higher order scattering model present.
+     10 - DIA Rotated water hole model present.
+     11 - CCR Extended C.R. model present.
+
+       LIST OF USER FILES
+       ******************
+ EXECUTABLE FILE               /home/robertsj/opt/studsvik/ssr1618_cms/libexec/studsvik/casmo4e/casmo4e-u1.00.02/casmo4e.exe
+ NEUTRON DATA LIBRARY FILE     /home/robertsj/opt/studsvik/ssr1618_cms/lib/studsvik/casmo4e/e60200
+ GAMMA DATA LIBRARY FILE       /home/robertsj/opt/studsvik/ssr1618_cms/lib/studsvik/casmo4e/galb418
+ INPUT FILE                    pwr.inp
+ OUTPUT LIST FILE              ./pwr.out
+ CARD IMAGE FILE (SEG1)        ./pwr.cax
+ 
+ [WARNING] IN INP_DBL             DBL card detected --Default quadrature doubled.
+ [WARNING] IN EDTFTD              Non-default neutron data library is attached.
+
+ ===>Writing complete of 2D ray-tracing diagram (by unique XS type): pwr.tif
+
+   ** C A S M O - 4E SUMMARY **
+
+   17 x 17
+   HVOI=  0.0 HTFU=  900.0 HTMO=  565.0 HTCO=  580.0 HBOR=  900.0
+   NO VOID    TFU    TMO    TCO    BOR ROD   BURNUP   K-INF   K-INF     M2     PIN   U-235 FISS PU  TOT PU
+                                             MWD/KG             TWO-GROUP     PEAK    WT %    WT %    WT %
+    1  0.0  900.0  565.0  580.0  900.0        0.000 1.27354 1.27149  62.18   1.059   4.000   0.000   0.000  
+    2                                         0.100 1.23449 1.23311  61.64   1.060   3.988   0.002   0.002  
+    3                                         0.500 1.22571 1.22445  61.51   1.060   3.941   0.022   0.022  
+    4                                         1.000 1.21976 1.21858  61.41   1.060   3.882   0.049   0.050  
+    5                                         2.000 1.21017 1.20912  61.25   1.060   3.769   0.100   0.103  
+    6                                         3.000 1.19980 1.19887  61.10   1.060   3.660   0.147   0.154  
+    7                                         4.000 1.18901 1.18821  60.94   1.059   3.554   0.191   0.202  
+    8                                         5.000 1.17813 1.17745  60.79   1.059   3.452   0.232   0.249  
+    9                                         6.000 1.16736 1.16679  60.65   1.059   3.352   0.270   0.293  
+   10                                         7.000 1.15683 1.15635  60.52   1.058   3.255   0.306   0.336  
+   11                                         8.000 1.14658 1.14618  60.39   1.058   3.162   0.341   0.378  
+   12                                         9.000 1.13662 1.13630  60.27   1.057   3.070   0.373   0.417  
+   13                                        10.000 1.12697 1.12671  60.16   1.057   2.981   0.404   0.456  
+   14                                        11.000 1.11761 1.11741  60.05   1.056   2.895   0.434   0.493  
+   15                                        12.500 1.10418 1.10404  59.90   1.056   2.769   0.475   0.546  
+   16                                        15.000 1.08311 1.08305  59.68   1.054   2.570   0.538   0.630  
+   17                                        17.500 1.06322 1.06322  59.48   1.053   2.383   0.593   0.707  
+   18                                        20.000 1.04446 1.04448  59.30   1.051   2.208   0.642   0.778  
+   19                                        22.500 1.02663 1.02666  59.14   1.049   2.043   0.686   0.844  
+   20                                        25.000 1.00958 1.00959  58.99   1.048   1.888   0.724   0.905  
+   21                                        27.500 0.99318 0.99317  58.85   1.046   1.743   0.758   0.962  
+   22                                        30.000 0.97740 0.97735  58.72   1.044   1.607   0.788   1.016  
+   23                                        32.500 0.96220 0.96210  58.59   1.043   1.479   0.815   1.065  
+   24                                        35.000 0.94755 0.94738  58.48   1.041   1.360   0.838   1.111  
+   25                                        37.500 0.93341 0.93318  58.37   1.039   1.248   0.858   1.155  
+   26                                        40.000 0.91978 0.91947  58.27   1.038   1.144   0.876   1.195  
+   27                                        42.500 0.90673 0.90634  58.18   1.037   1.047   0.891   1.233  
+   28                                        45.000 0.89420 0.89372  58.09   1.035   0.957   0.904   1.268  
+   29                                        47.500 0.88218 0.88162  58.01   1.034   0.873   0.916   1.302  
+   30                                        50.000 0.87068 0.87002  57.93   1.033   0.795   0.925   1.333  
+   31                                        52.500 0.85969 0.85894  57.86   1.032   0.723   0.934   1.362  
+   32                                        55.000 0.84921 0.84836  57.79   1.032   0.657   0.941   1.390  
+   33                                        57.500 0.83924 0.83830  57.73   1.031   0.596   0.947   1.416  
+   34                                        60.000 0.82977 0.82873  57.67   1.030   0.540   0.952   1.441  
+   35                                        62.500 0.82081 0.81968  57.62   1.030   0.489   0.956   1.464  
+   36                                        65.000 0.81234 0.81112  57.58   1.030   0.442   0.960   1.487  
+   37                                        67.500 0.80436 0.80305  57.54   1.030   0.399   0.963   1.508  
+   38                                        70.000 0.79686 0.79547  57.50   1.030   0.360   0.966   1.528  
+   39                                        72.500 0.78983 0.78835  57.47   1.030   0.324   0.968   1.547  
+   40                                        75.000 0.78324 0.78168  57.44   1.030   0.292   0.970   1.565  
+   41                                        77.500 0.77708 0.77544  57.42   1.030   0.263   0.972   1.582  
+   42                                        80.000 0.77133 0.76963  57.40   1.031   0.236   0.974   1.598  
+
+
+ RUN TERMINATED.  2  WARNING(S) ENCOUNTERED
+   0  FATAL ERROR(S),     2  WARNING(S)
+   0  USAGE NOTE(S),      0  CAUTION(S)
+
+
+                   Neutron Calculation                         
+ Memory Use        Allocated       Used                         
+ A Array            14000000   13403100
+ B Array             4000000     108136
+                    --------    -------
+ Total Words        18000000   13511236
+ Total Mwords           18.0       13.5
+ Total Mbytes           72.0       54.0
+
+ Run Started     (Date,Time):  2018/03/29   12:29:26  
+ Run Completed   (Date,Time):  2018/03/29   12:30:12  
+ Total Wall Time Used       :               00:00:46
+ Total CPU  Time Used       :               00:00:44   CPU Utilization:   95%
+ Files:
+ Input                      :  pwr.inp
+ Output                     :  ./pwr.out
+ Card Image                 :  ./pwr.cax
+ Graphic file               :  pwr.tif
+ *********************************
+ *  CASMO-4E NORMAL TERMINATION  *
+ *     -WARNINGS ENCOUNTERED-    *
+ *********************************
+C-4E Complete....
