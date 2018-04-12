@@ -87,6 +87,12 @@ group 1 only.
    the discontinuity factors change the homogenized result.  Note, your report
     should provide a sufficient description of homogenization and GET so that
    a general student of you background can understand the work.
-
+ 5. Suppose assembly 3 were replaced by an assembly with material C, which
+    has cross sections equal to the arithmetic average of the values for
+    material A and B.  Solve the problem analytically (or with high precision).
+    Then, perform homogenization and use the GET parameters from Part 4.  In 
+    other words, see how well use of discontinuity factors generated from
+    one geometry works when applied to a similar (but different) geometry.
+     (Note, the Smith paper has example results for this comparison, too).
 
 
