@@ -1,0 +1,53 @@
+'COM' The DIM cards define reactor type, array sizes, data file sizes, default
+'COM' values, default maps, and internal data storage arrangements.
+
+'DIM.PWR' 1 /           * one row of assembles
+'DIM.CAL' 1 4 2 0 /     * axial|full core|2x2 nodes|no reflector 
+'DIM.DEP' 'EXP' 'SAM' 'PIN' 'HTMO' 'HBOR' 'HTF' / * depletion arguments
+
+'COM' The TIT cards define header information.
+
+'TIT.PRO' 'My Project' / * project name
+'TIT.RUN' '2-D' /
+'TIT.CAS' 'PWR AUDIT MODEL FOR STD FUEL ASSEMBLY'
+
+'COM' The COR cards define core state conditions and various global core 
+'COM' design parameters.
+
+'COR.DAT' 21.50 365.76 95. 670. -1/   * width (cm) | height (cm) | p. den (kw/l) | cool flow (kg/cm^2-hr) | cool tmp 
+'COR.SYM' 'MIR' 1 1 1 1 /             * reflect on all 4 sides
+'COR.OPE' 100.0 100. 2250. / * CORE DATA HFP
+'COR.TIN' 573.0 /            * CORE AVERAGE TEMP-F
+'COR.BOR' 900.0 /            *
+
+'COM' The SEG/REF cards are used to define fuel or reflector segments, 
+'COM' respectively. Fuel assemblies are built, based on the SEG/REF cards 
+'COM' and the FUE cards.
+
+'LIB' './cms.std.lib'/    * Library created by CMSLINK
+
+'SEG.LIB' 1 'STDPWRe4p25' /
+'SEG.TFU' 0 227.0 0. / * segment fuel temperature fit
+
+'COM' The FUE card define fuel assemblies, name the assemblies,
+'COM' and load the assemblies into the core.
+
+'FUE.ZON' 01 1 'C00' 1 365.76/ * fuel assembly axial zoning
+'FUE.TYP' 1
+          1 / * fuel assembly type core map using FUE.ZON numbers
+
+'COM' Other things
+
+'ITE.LIM' 1.2000 1,,, 7/ * Initial k-infinity
+'WRE'     'SINGLE' 0. 5. 10. /
+'DEP.STA' 'AVE' 0. -1 5.0 -2.5 15.0 /
+'PRI.STA' '2KINF' /
+'PIN.EDT' 'ON' '2PXP' '0PXP' /
+'PIN.ZED'  1/
+'PIN.ASM'  'PLANES'/
+
+'STA' /
+'END'/
+
+
+
